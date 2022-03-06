@@ -2,13 +2,11 @@
 {% extends 'base.html' %}
 {% load static %}
   <head>
-    <title>Последние обновления на сайте</title>
+    {% block title %} {{ title }} {% endblock %}
   </head>
   <body>
-
     <main> 
       <!-- класс py-5 создает отступы сверху и снизу блока -->
-      <div class="container py-5">
         {% block content %}
         <h1>Последние обновления на сайте</h1>
         {% for post in posts %}
@@ -33,7 +31,6 @@
         {% endif %}
         {% endfor %}
         {% endblock %}
-      </div>  
     </main>
     <!-- Использованы классы бустрапа: -->
     <!-- border-top: создаёт тонкую линию сверху блока -->
